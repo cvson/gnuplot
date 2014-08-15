@@ -1,0 +1,29 @@
+#!/usr/bin/gnuplot
+
+# Redirect output to file
+set terminal postscript enhanced eps color
+set output "workforce_male_percent.eps"
+set style data histogram
+set yrange [0:100]
+set key right top title ''
+#set title "male workforce percentage"
+set style fill solid border -1
+set xtics font ",20"
+set key font ",20"
+set grid y
+set label 1 "\\@visionlib" at -.9,95 tc rgb "#B45F04"
+plot "workforce_diversity.txt" using 2: xtic(1) title "male workforce percentage" linecolor rgb "#1F9839"
+
+pause -1 "<cr> to plot diversity"
+
+set output "workforce_per_rage.eps"
+set auto x
+set yrange [0:100]
+set style data histogram
+set style histogram cluster gap 1
+set style fill solid border -1
+set boxwidth 0.9
+set key spacing 1.5
+set label 1 "\\@visionlib" at -.9,95 tc rgb "#B45F04"
+#set xtic rotate by -45 scale 0 font ",20"
+plot "workforce_diversity.txt" using 3: xtic(1) title "White" linecolor rgb "#FAFAFA", '' u 4 title "Asia" linecolor rgb "#F4FA58", '' u 5 title "Black" linecolor rgb "#424242", '' u 6 title "Hispanic" linecolor rgb "#4000FF"

@@ -1,0 +1,5 @@
+Apple	70	55	15	11	7	2	
+Google	70	61	30	3	2	4
+Yahoo	63	50	39	2	4	2
+Facebook	69	57	34	4	2	3	
+	
